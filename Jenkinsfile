@@ -27,9 +27,11 @@ pipeline {
                     sh 'npm test -- --watchAll=false --json --outputFile=test-result.json'
                 }
             }
-            post {
-                always {
-                    junit 'test-result.json'
+        }
+        stage('Start') {
+            steps {
+                dir('jenkins-proj1') {
+                    sh 'npm start'
                 }
             }
         }
