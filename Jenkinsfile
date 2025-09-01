@@ -24,7 +24,7 @@ pipeline {
         stage('Test') {
             steps {
                 dir('jenkins-proj1') {
-                    sh 'npm test -- --watchAll=false --json --outputFile=test-result.json'
+                    sh 'npm test -- --watchAll=false'
                 }
             }
         }
